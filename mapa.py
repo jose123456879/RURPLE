@@ -1,4 +1,9 @@
 def cargar_mapa(f):
-	f=open(f, "r")
-	Mapa=list(f)
-	return Mapa
+	mapa=open(f, "r")
+	lista=[]
+	for linea in mapa:
+		lista.append(list(linea))
+	return lista
+
+Mapa=("mapa.txt")
+print(cargar_mapa(Mapa))	
