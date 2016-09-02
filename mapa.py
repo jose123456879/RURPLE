@@ -1,9 +1,28 @@
+
+
+
 class Mapa(object):
+ 
 	def __init__(self, altura, ancho, fichas, robot):
 		self.altura = altura
 		self.ancho = ancho
 		self.fichas = []
 		self.robot = None
+
+			
+lista_mapa=[]
+mapa==Mapa(len(lista_mapa[0],lista_mapa))
+for y in range(len(lista_mapa)):
+	for x in range(len(lista_mapa)):
+		if lista_mapa[y][x]=="*":
+			robot=Robot[x][y]
+		elif lista_mapa[y][x] == "0":
+			pass
+		else:
+			cantidad=int(lista_mapa[y][x])
+			for i in range(cantidad):
+				moneda=Moneda(x,y)
+				mapa_agregar=moneda(moneda)
 
 	def cargar_mapa(nombre):
 		name= open(nombre, "r")
@@ -12,6 +31,8 @@ class Mapa(object):
 		for linea in name:
 			lista.append(list(linea))
 		return lista	
+
+
 
 	def dibujar(self):
 		resultado = ""
@@ -35,3 +56,6 @@ class Mapa(object):
 
 	def agregar_ficha(self,x,y):
 		self.ficha.append(ficha)
+
+
+	

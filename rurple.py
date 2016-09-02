@@ -8,9 +8,6 @@ def cargar_mapa(nombre):
 		lista.append(list(linea))
 	return lista	
 
-for numero in linea:
-	if numero==0:
-		print(" " 0="")
 
 Mapa1=("mapa.txt")
 Mapa2=("mapa1.txt")
