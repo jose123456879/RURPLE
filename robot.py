@@ -1,18 +1,41 @@
 class Robot(object):
-	def __init__(self,x, y):
-		self.posicion_x	= 0
-		self.pocicion_y = 0
-		self.rotacion = 1
-		self.pick = False
-		self.mapa = mapa
+	def __init__(self, posicion_x, posicion_y):
+		self.x	= posicion_x
+		self.y = posicion_y
+		self.rotacion = 0
+		self.mapa = None
 		self.fichas = 0
-	
-	def Rotar(self):
-		self.rotacion += 1
-		if self.rotacion == 5:
-			self.rotacion = 1
-	def recoger_moneda(self):
-		if Hay_ficha(self.x, self.y):
-			mapa.quitar_ficha(self.x,self.y)
-			self.fichas += 1
+
+	def rotar(self):
+		self.rotacion = (self.rotacion + 1) % 4
+
+	def dibujar(self):
+		if self.rotacion == 0:
+			return "^"
+		elif self.rotacion == 1:
+			return ">"
+		elif self.rotacion == 2:
+			return "v"
+		return "<"
+
+	def colocar_en_mapa(self,mapa):
+		self.mapa = mapa
+
+	def mover(self):
+		if self.rotacion == 0:
+			self.y -= 1
+			if self.y < 0:
+				self.y = 0
+		elif self.rotacion == 1:
+			self.x += 1
+			if self.x > 79:
+				self.x = 79
+		if self.rotacion == 2:
+			self.y += 1
+			if self.y > 49:
+				self.y = 49
+		else:
+			self.x -= 1
+			if self.x < 0:
+				self.x = 0
 			
