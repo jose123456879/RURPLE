@@ -1,7 +1,7 @@
 class Robot(object):
 	def __init__(self, posicion_x, posicion_y):
-		self.x	= posicion_x
-		self.y = posicion_y
+		self.x	= x
+		self.y = y
 		self.rotacion = 0
 		self.mapa = None
 		self.fichas = 0
@@ -39,3 +39,24 @@ class Robot(object):
 			if self.x < 0:
 				self.x = 0
 			
+		  if self.x < 0:
+            self.x = 0
+
+        if self.x >= self.mapa.ancho:
+            self.x = self.mapa.ancho - 1
+
+        if self.y < 0:
+            self.y = 0
+
+        if self.y >= self.mapa.altura:
+            self.y = self.mapa.altura - 1
+
+    def rotar(self):
+        if self.direccion == 0:
+            self.direccion = 1
+        elif self.direccion == 1:
+            self.direccion = 2
+        elif self.direccion == 2:
+            self.direccion = 3
+        else:
+            self.direccion = 0	
