@@ -1,6 +1,3 @@
-
-
-
 class Mapa(object):
  
 	def __init__(self, altura, ancho, fichas, robot):
@@ -38,24 +35,36 @@ for y in range(len(lista_mapa)):
 		resultado = ""
 		for y in range(self.altura):
 			for x in range(self.ancho):
-				if ficha.x == x and ficha.y == y:
-					resultado += ficha
-				elif robot.x == x and robot.y == y:
-					resultado += robot
+				if x == self.robot.x and y == self.robot.y:
+					resultado += self.robot.dibujar()
+				elif self.contar_monedas_en(x,y)
+
 				else:
 					resultado += " "
 			resultado += "\n"
+		return resultado	
 
 	def contar_fichas(self,x,y):
 		conteo = 0
-		for y in range(self.altura):
-			for x in range(self.ancho):
+		for moneda in self.moneda:
 				if ficha.y == y and ficha.x == x:
-					conteo += ficha
+					conteo += 1
 		return conteo
-
-	def agregar_ficha(self,x,y):
-		self.ficha.append(ficha)
-
-
 	
+    def asignar_robot(self, robot):
+        self.robot = robot
+
+    def agregar_moneda(self, moneda):
+        self.monedas.append(moneda)
+
+	def remover_moneda_en(self, x, y):
+		indice_coincidencia = -1
+		for indice in range(len(self.monedas)):
+			moneda = self.monedas[indice]
+			if moneda.x == x and moneda.y == y:
+				indice_coincidencia = indice
+				break
+
+		if indice_coincidencia >= 0:
+
+			self.monedas.pop(indice_coincidencia)    
