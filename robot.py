@@ -6,9 +6,6 @@ class Robot(object):
 		self.mapa = None
 		self.fichas = 0
 
-	def rotar(self):
-		self.rotacion = (self.rotacion + 1) % 4
-
 	def dibujar(self):
 		if self.rotacion == 0:
 			return "^"
@@ -40,7 +37,7 @@ class Robot(object):
 				self.x = 0
 			
 		  if self.x < 0:
-            self.x = 0
+		  	self.x = 0
 
         if self.x >= self.mapa.ancho:
             self.x = self.mapa.ancho - 1
@@ -51,12 +48,21 @@ class Robot(object):
         if self.y >= self.mapa.altura:
             self.y = self.mapa.altura - 1
 
-    def rotar(self):
-        if self.direccion == 0:
-            self.direccion = 1
-        elif self.direccion == 1:
-            self.direccion = 2
-        elif self.direccion == 2:
-            self.direccion = 3
-        else:
-            self.direccion = 0	
+	def rotar(self):
+		if self.direccion == 0:
+			self.direccion = 1
+		elif self.direccion == 1:
+			self.direccion = 2
+		elif self.direccion == 2:
+			self.direccion = 3
+		else:
+			self.direccion = 0	
+	def asingar_mapa(self, mapa):
+		self.mapa = mapa
+
+	def recoger(self):
+		if self.mapa.contar_monedas_en(self.x, self.y) > 0:
+			self.monedas += 1
+			self.mapa.remover_moneda_en(x, y)		
+
+            
