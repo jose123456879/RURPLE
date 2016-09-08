@@ -39,14 +39,14 @@ class Robot(object):
 		  if self.x < 0:
 		  	self.x = 0
 
-        if self.x >= self.mapa.ancho:
-            self.x = self.mapa.ancho - 1
+		if self.x >= self.mapa.ancho:
+		self.x = self.mapa.ancho - 1
 
-        if self.y < 0:
-            self.y = 0
+		if self.y < 0:
+		self.y = 0
 
-        if self.y >= self.mapa.altura:
-            self.y = self.mapa.altura - 1
+		if self.y >= self.mapa.altura:
+		self.y = self.mapa.altura - 1
 
 	def rotar(self):
 		if self.direccion == 0:

@@ -8,7 +8,8 @@ class Mapa(object):
 
 			
 lista_mapa=[]
-mapa==Mapa(len(lista_mapa[0],lista_mapa))
+mapa="p"
+mapa=Mapa(len(lista_mapa[0],lista_mapa))
 for y in range(len(lista_mapa)):
 	for x in range(len(lista_mapa)):
 		if lista_mapa[y][x]=="*":
@@ -37,12 +38,12 @@ for y in range(len(lista_mapa)):
 			for x in range(self.ancho):
 				if x == self.robot.x and y == self.robot.y:
 					resultado += self.robot.dibujar()
-				elif self.contar_monedas_en(x,y)
-
+				if self.contar_monedas_en(x,y):
+					pass
 				else:
 					resultado += " "
-			resultado += "\n"
-		return resultado	
+					resultado += "\n"
+			return resultado	
 
 	def contar_fichas(self,x,y):
 		conteo = 0
@@ -51,11 +52,11 @@ for y in range(len(lista_mapa)):
 					conteo += 1
 		return conteo
 	
-    def asignar_robot(self, robot):
-        self.robot = robot
+	def asignar_robot(self, robot):
+		self.robot = robot
 
-    def agregar_moneda(self, moneda):
-        self.monedas.append(moneda)
+	def agregar_moneda(self, moneda):
+		self.monedas.append(moneda)
 
 	def remover_moneda_en(self, x, y):
 		indice_coincidencia = -1

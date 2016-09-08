@@ -1,5 +1,7 @@
 from mapa import Mapa
 from robot import Robot
+import time
+
 def cargar_mapa(nombre):
 	name= open(nombre, "r")
 	lista = []
@@ -10,7 +12,8 @@ def cargar_mapa(nombre):
 def cargar_instrucciones(nombre):
 	archivo=open(nombre,"r")
 	lista_intrucciones=[]
-	
+	for i in intrucciones:
+		instrucciones.append(i.strip())
 
 Mapa1=("mapa.txt")
 Mapa2=("mapa1.txt")
@@ -19,6 +22,10 @@ print("ingrese el numero del mapa deseado:\n1. mapa1\n2. imapa2")
 opc=int(input("ingrese el numero: "))
 if opc==1:
 	print(cargar_mapa(Mapa1))
+else:
+	print(cargar_mapa(Mapa2))	
+
+
 
 
 
